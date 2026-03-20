@@ -30,8 +30,8 @@ export default function Nav() {
         <Image
           src="/images/Emanuel_Logo.png"
           alt="Emanuel Blueboard Corporation"
-          width={80}
-          height={80}
+          width={120}
+          height={120}
           style={{ objectFit: 'contain',height: '70px',
           width: '70px',}}
         />
