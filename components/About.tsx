@@ -14,27 +14,18 @@ export default function About() {
     <section className="about" id="about">
       {/* IMAGE STACK */}
       <div className="about-image-stack fade-up">
-        <Image
-          src="/images/GCUD7035.JPG"
-          alt="Emanuel — owner and master plasterer"
-          width={500}
-          height={600}
-          className="about-img-main"
-          style={{ objectFit: 'cover' }}
-        />
-        <Image
-          src="/images/EPRS8484.JPG"
-          alt="Finished plastering work"
-          width={350}
-          height={350}
-          className="about-img-accent"
-          style={{ objectFit: 'cover' }}
-        />
-        <div className="about-badge">
-          <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '1.8rem', lineHeight: 1 }}>15+</div>
-          <div style={{ fontSize: '0.5rem', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700 }}>Years<br />Expert</div>
-        </div>
-      </div>
+  <Image
+    src="/images/GCUD7035.JPG"
+    alt="Emanuel — owner and master plasterer"
+    width={500}
+    height={600}
+    style={{ 
+      objectFit: 'cover',
+      width: '100%',
+      height: '600px',
+    }}
+  />
+</div>
 
       {/* CONTENT */}
       <div className="fade-up">
