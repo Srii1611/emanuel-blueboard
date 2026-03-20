@@ -20,7 +20,7 @@ export default function Nav() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      padding: scrolled ? '0.8rem 4rem' : '1.2rem 4rem',
+      padding: scrolled ? '0.4rem 4rem' : '0.5rem 4rem',
       background: 'rgba(13,13,13,0.85)',
       backdropFilter: 'blur(12px)',
       borderBottom: '1px solid rgba(201,168,76,0.2)',
@@ -30,10 +30,10 @@ export default function Nav() {
         <Image
           src="/images/Emanuel_Logo.png"
           alt="Emanuel Blueboard Corporation"
-          width={120}
-          height={100}
-          style={{ objectFit: 'contain',height: '55px',
-          width: 'auto',}}
+          width={80}
+          height={80}
+          style={{ objectFit: 'contain',height: '70px',
+          width: '70px',}}
         />
       </Link>
 
