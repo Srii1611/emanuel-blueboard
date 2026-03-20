@@ -32,8 +32,8 @@ export default function Nav() {
           alt="Emanuel Blueboard Corporation"
           width={1}
           height={1}
-          style={{ objectFit: 'contain',height: '200px',
-          width: '200px',}}
+          style={{ objectFit: 'contain',height: '150px',
+          width: '150px',}}
         />
       </Link>
 
