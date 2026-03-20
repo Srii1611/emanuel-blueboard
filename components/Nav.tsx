@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -25,14 +26,14 @@ export default function Nav() {
       borderBottom: '1px solid rgba(201,168,76,0.2)',
       transition: 'all 0.3s ease',
     }}>
-      <Link href="/" style={{
-        fontFamily: "'Bebas Neue', sans-serif",
-        fontSize: '1.5rem',
-        letterSpacing: '0.15em',
-        color: 'var(--gold)',
-        textDecoration: 'none',
-      }}>
-        EBC <span style={{ color: 'var(--cream)' }}>|</span> Emanuel Blueboard
+      <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+        <Image
+          src="/images/Emanuel_Logo.png"
+          alt="Emanuel Blueboard Corporation"
+          width={60}
+          height={60}
+          style={{ objectFit: 'contain' }}
+        />
       </Link>
 
       <ul style={{ display: 'flex', gap: '2.5rem', listStyle: 'none' }}>
