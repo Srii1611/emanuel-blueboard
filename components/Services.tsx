@@ -69,7 +69,7 @@ export default function Services() {
               <div className="service-number">{s.num}</div>
             </div>
             <div className="service-body">
-              <div className="service-name">{s.name}</div>
+              <h3 className="service-name">{s.name}</h3>
               <p className="service-desc">{s.desc}</p>
               <span className="service-tag">{s.tag}</span>
             </div>

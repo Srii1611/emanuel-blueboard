@@ -15,10 +15,10 @@ export default function Nav() {
 
   const links = [
     { label: 'Home', href: '/' },
-    { label: 'Services', href: '#services' },
+    { label: 'Services', href: '/#services' },
     { label: 'Gallery', href: '/gallery' },
-    { label: 'About', href: '#about' },
-    { label: 'Process', href: '#process' },
+    { label: 'About', href: '/#about' },
+    { label: 'Process', href: '/#process' },
   ]
 
   return (
@@ -42,7 +42,7 @@ export default function Nav() {
             </li>
           ))}
           <li>
-            <a href="#contact" className="nav-link nav-cta">Get a Quote</a>
+            <a href="/#contact" className="nav-link nav-cta">Get a Quote</a>
           </li>
         </ul>
 
@@ -71,7 +71,7 @@ export default function Nav() {
           </Link>
         ))}
         <a
-          href="#contact"
+          href="/#contact"
           className="mobile-nav-link mobile-nav-cta"
           onClick={() => setMenuOpen(false)}
         >

@@ -430,15 +430,16 @@ body::before {
 /* ── FOOTER ── */
 .site-footer {
   background: #080808;
-  padding: 3rem 4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 0;
   border-top: 1px solid rgba(201,168,76,0.1);
 }
-.footer-center { flex: 1; display: flex; justify-content: center; padding: 0 2rem; }
-.footer-phone { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.1em; color: var(--cream); text-decoration: none; transition: color 0.2s; }
-.footer-phone:hover { color: var(--gold); }
+.footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; padding: 4rem 4rem 3rem; }
+.footer-col { display: flex; flex-direction: column; }
+.footer-heading { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 500; }
+.footer-link { font-size: 0.82rem; color: var(--plaster); opacity: 0.6; text-decoration: none; margin-bottom: 0.5rem; transition: opacity 0.2s, color 0.2s; }
+.footer-link:hover { opacity: 1; color: var(--gold); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 4rem; border-top: 1px solid rgba(255,255,255,0.05); }
+.form-success-message { text-align: center; padding: 3rem 2rem; border: 1px solid rgba(201,168,76,0.2); background: rgba(201,168,76,0.05); }
 
 /* ══════════════════════════════════════
    RESPONSIVE — TABLET (max 900px)
@@ -504,8 +505,9 @@ body::before {
   .btn-large { padding: 1rem 2.2rem; }
 
   /* Footer */
-  .site-footer { flex-direction: column; gap: 1.5rem; padding: 2.5rem 1.5rem; text-align: center; }
-  .footer-center { padding: 0; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem 2rem; text-align: center; }
+  .footer-col { align-items: center; }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; padding: 1.2rem 1.5rem; text-align: center; }
 }
 
 /* ══════════════════════════════════════
