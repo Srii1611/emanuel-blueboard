@@ -10,14 +10,14 @@ const services = [
 export default function Services() {
   return (
     <section className="services" id="services">
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '4rem' }} className="fade-up">
+      <div className="services-header fade-up">
         <div>
           <div className="section-label">What We Do</div>
           <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', lineHeight: 1, letterSpacing: '0.02em' }}>
             Our <span style={{ color: 'var(--gold)' }}>Services</span>
           </h2>
         </div>
-        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.2rem', lineHeight: 1.7, color: 'var(--plaster)', maxWidth: '380px', opacity: 0.8 }}>
+        <p className="services-intro">
           Every wall tells a story. We make sure yours is told with precision, durability, and craftsmanship that lasts decades.
         </p>
       </div>

@@ -5,7 +5,7 @@ export default function Hero() {
     <>
       <section className="hero">
         {/* LEFT */}
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '8rem 4rem 4rem', position: 'relative', zIndex: 2 }}>
+        <div className="hero-left">
           <div className="hero-eyebrow">MetroWest Massachusetts · Since 2009</div>
 
           <h1 className="hero-title">
@@ -18,20 +18,20 @@ export default function Hero() {
             Where raw walls become refined spaces — precision blueboard, expert plastering, and flawless finishes for New England's finest homes.
           </p>
 
-          <div style={{ display: 'flex', gap: '2rem', marginBottom: '3rem' }}>
+          <div className="hero-stats">
             {[
               { number: '15+', label: 'Years Active' },
               { number: '500+', label: 'Projects Done' },
               { number: '100%', label: 'Licensed & Insured' },
             ].map(({ number, label }) => (
-              <div key={label} style={{ display: 'flex', flexDirection: 'column' }}>
+              <div key={label} className="hero-stat">
                 <span className="stat-number">{number}</span>
                 <span className="stat-label">{label}</span>
               </div>
             ))}
           </div>
 
-          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          <div className="hero-actions">
             <a href="#contact" className="btn-primary"><span>Get Free Quote</span></a>
             <a href="#gallery" className="btn-outline">View Our Work</a>
           </div>
@@ -56,7 +56,7 @@ export default function Hero() {
         </div>
 
         {/* Scroll indicator */}
-        <div style={{ position: 'absolute', bottom: '2rem', left: '4rem', display: 'flex', alignItems: 'center', gap: '0.8rem', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', opacity: 0.5, zIndex: 3 }}>
+        <div className="hero-scroll-indicator">
           <div className="scroll-line" />
           Scroll to explore
         </div>

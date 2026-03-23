@@ -12,23 +12,26 @@ const credentials = [
 export default function About() {
   return (
     <section className="about" id="about">
-      {/* IMAGE STACK */}
+      {/* IMAGE with dark overlay */}
       <div className="about-image-stack fade-up">
-  <Image
-    src="/images/GCUD7035.JPG"
-    alt="Emanuel — owner and master plasterer"
-    width={500}
-    height={600}
-    style={{ 
-      objectFit: 'cover',
-      width: '100%',
-      height: '600px',
-    }}
-  />
-</div>
+        <Image
+          src="/images/GCUD7035.JPG"
+          alt="Emanuel — owner and master plasterer"
+          width={500}
+          height={600}
+          style={{
+            objectFit: 'cover',
+            width: '100%',
+            height: '100%',
+            display: 'block',
+          }}
+        />
+        {/* Dark gradient so text is never placed over the image on mobile */}
+        <div className="about-img-overlay" />
+      </div>
 
       {/* CONTENT */}
-      <div className="fade-up">
+      <div className="about-content fade-up">
         <div className="section-label">The Man Behind the Work</div>
         <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', lineHeight: 1, marginBottom: '1.5rem' }}>
           Meet <span style={{ color: 'var(--gold)' }}>Emanuel</span>
@@ -45,7 +48,7 @@ export default function About() {
           We specialize in work that other crews turn down — vaulted ceilings, complex angles, tight timelines, and renovation projects that demand seamless matching. No shortcuts. No excuses. Just clean, durable work that stands up for decades.
         </p>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginTop: '2rem', marginBottom: '2.5rem' }}>
+        <div className="credentials-grid">
           {credentials.map(c => (
             <span key={c} className="credential">{c}</span>
           ))}

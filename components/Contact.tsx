@@ -38,7 +38,8 @@ export default function Contact() {
           Ready to <span style={{ color: 'var(--gold)' }}>Start</span><br />Your Project?
         </h2>
         <p className="cta-subtitle">Free estimates · Fast turnaround · 15+ years of expertise</p>
-        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', position: 'relative' }}>
+        {/* Use cta-actions class — stacks on mobile, row on desktop */}
+        <div className="cta-actions">
           <a href="#contact" className="btn-primary btn-large"><span>Get a Free Quote</span></a>
           <a href="tel:5082508872" className="btn-outline btn-large">Call (508) 250-8872</a>
         </div>
@@ -58,7 +59,7 @@ export default function Contact() {
             { icon: '📍', label: 'Based In', value: 'Framingham, Massachusetts', sub: 'Serving all of MetroWest MA' },
             { icon: '🕐', label: 'Hours', value: 'Mon – Sat: 7am – 6pm', sub: 'Emergency repairs available' },
           ].map(({ icon, label, value, sub, href }) => (
-            <div key={label} style={{ display: 'flex', alignItems: 'flex-start', gap: '1.2rem', marginBottom: '2rem', paddingBottom: '2rem', borderBottom: '1px solid rgba(245,240,232,0.06)' }}>
+            <div key={label} className="contact-row">
               <div className="contact-icon">{icon}</div>
               <div>
                 <div className="contact-label">{label}</div>
@@ -81,7 +82,8 @@ export default function Contact() {
         {/* FORM */}
         <div className="fade-up">
           <form onSubmit={handleSubmit}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+            {/* Name row — stacks on mobile */}
+            <div className="form-row">
               <div>
                 <label className="form-label">First Name</label>
                 <input type="text" name="first_name" className="form-input" placeholder="John" required />
@@ -91,7 +93,8 @@ export default function Contact() {
                 <input type="text" name="last_name" className="form-input" placeholder="Smith" required />
               </div>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+            {/* Phone/email row — stacks on mobile */}
+            <div className="form-row">
               <div>
                 <label className="form-label">Phone</label>
                 <input type="tel" name="phone" className="form-input" placeholder="(508) 555-0000" required />
