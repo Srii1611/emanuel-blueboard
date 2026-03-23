@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Hero() {
   return (
@@ -33,7 +34,7 @@ export default function Hero() {
 
           <div className="hero-actions">
             <a href="#contact" className="btn-primary"><span>Get Free Quote</span></a>
-            <a href="#gallery" className="btn-outline">View Our Work</a>
+            <Link href="/gallery" className="btn-outline">View Our Work</Link>
           </div>
         </div>
 
