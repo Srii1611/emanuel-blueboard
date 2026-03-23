@@ -15,7 +15,7 @@ export default function Nav() {
 
   const links = [
     { label: 'Services', href: '#services' },
-    { label: 'Gallery', href: '#gallery' },
+    { label: 'Gallery', href: '/gallery' },
     { label: 'About', href: '#about' },
     { label: 'Process', href: '#process' },
   ]
@@ -37,7 +37,7 @@ export default function Nav() {
         <ul className="nav-links-desktop">
           {links.map(({ label, href }) => (
             <li key={label}>
-              <a href={href} className="nav-link">{label}</a>
+              <Link href={href} className="nav-link">{label}</Link>
             </li>
           ))}
           <li>
@@ -60,14 +60,14 @@ export default function Nav() {
       {/* Mobile drawer */}
       <div className={`mobile-drawer ${menuOpen ? 'drawer-open' : ''}`}>
         {links.map(({ label, href }) => (
-          <a
+          <Link
             key={label}
             href={href}
             className="mobile-nav-link"
             onClick={() => setMenuOpen(false)}
           >
             {label}
-          </a>
+          </Link>
         ))}
         <a
           href="#contact"
