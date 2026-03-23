@@ -15,7 +15,7 @@ export default function Nav() {
 
   const links = [
     { label: 'Services', href: '#services' },
-    { label: 'Gallery', href: '/gallery' },
+    { label: 'Gallery', href: '#gallery' },
     { label: 'About', href: '#about' },
     { label: 'Process', href: '#process' },
   ]
@@ -27,9 +27,9 @@ export default function Nav() {
           <Image
             src="/images/Emanuel_Logo.png"
             alt="Emanuel Blueboard Corporation"
-            width={80}
-            height={80}
-            style={{ objectFit: 'contain', height: '70px', width: '70px' }}
+            width={100}
+            height={100}
+            style={{ objectFit: 'contain', height: '80px', width: '80px' }}
           />
         </Link>
 
