@@ -1,4 +1,5 @@
-# Run this from your project root: C:\Users\manne\OneDrive\Desktop\emanuel-blueboard
+# Run from project root: C:\Users\manne\OneDrive\Desktop\emanuel-blueboard
+# Step 1: Rename image files
 
 $renames = @{
     "EPRS8484.JPG" = "vaulted-ceiling-plastering-new-build.jpg"
@@ -17,17 +18,15 @@ $renames = @{
     "Emanuel_Logo.png" = "emanuel-blueboard-logo.png"
 }
 
-$imgDir = "public\images"
-
 foreach ($old in $renames.Keys) {
-    $oldPath = Join-Path $imgDir $old
-    $newPath = Join-Path $imgDir $renames[$old]
+    $oldPath = "public\images\$old"
+    $newPath = "public\images\$($renames[$old])"
     if (Test-Path $oldPath) {
         Rename-Item $oldPath $renames[$old]
         Write-Host "Renamed: $old -> $($renames[$old])" -ForegroundColor Green
     } else {
-        Write-Host "Not found: $old (already renamed?)" -ForegroundColor Yellow
+        Write-Host "SKIP (not found): $old" -ForegroundColor Yellow
     }
 }
 
-Write-Host "`nDone! Now run: git apply emanuel-seo-code-only.patch" -ForegroundColor Cyan
+Write-Host "`nDone! Now apply the code patch next." -ForegroundColor Cyan

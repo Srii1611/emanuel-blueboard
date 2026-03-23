@@ -1,0 +1,348 @@
+diff --git a/app/gallery/page.tsx b/app/gallery/page.tsx
+index 0e65f63..91e3b3c 100644
+--- a/app/gallery/page.tsx
++++ b/app/gallery/page.tsx
+@@ -1,11 +1,17 @@
++import type { Metadata } from 'next'
+ import Nav from '@/components/Nav'
+ import GallerySection from '@/components/Gallery'
+ import Footer from '@/components/Footer'
+ import ScrollAnimations from '@/components/ScrollAnimations'
+ 
+-export const metadata = {
+-  title: 'Project Gallery | Emanuel Blueboard & Plastering Corp',
+-  description: 'Browse our portfolio of blueboard installation, skim coat plastering, vaulted ceilings, and renovation work across MetroWest Massachusetts.',
++export const metadata: Metadata = {
++  title: 'Project Gallery | Blueboard & Plastering Work — Emanuel Blueboard Corporation',
++  description: 'Browse photos of blueboard installation, skim coat plastering, vaulted ceilings, water damage repair, and renovation projects across Framingham and MetroWest MA.',
++  openGraph: {
++    title: 'Project Gallery — Emanuel Blueboard Corporation',
++    description: 'Real plastering and blueboard work across MetroWest MA. Vaulted ceilings, new construction, renovations, and repairs.',
++    images: ['/images/architectural-diamond-ceiling-plaster.jpg'],
++  },
+ }
+ 
+ export default function GalleryPage() {
+diff --git a/app/layout.tsx b/app/layout.tsx
+index 9c3b15d..22066a7 100644
+--- a/app/layout.tsx
++++ b/app/layout.tsx
+@@ -1,10 +1,143 @@
+ import type { Metadata } from 'next'
+ import './globals.css'
+ 
++// TODO: Replace with actual custom domain once purchased
++const SITE_URL = 'https://emanuel-blueboard.vercel.app'
++
+ export const metadata: Metadata = {
+-  title: 'Emanuel Blueboard Corporation | Premier Plastering & Blueboard — MetroWest MA',
+-  description: '15+ years of expert blueboard installation, plastering, and drywall finishing across MetroWest Massachusetts. Licensed, insured, trusted by contractors and homeowners.',
+-  keywords: 'blueboard installation, plastering, MetroWest MA, Framingham MA, skim coat, drywall, vaulted ceiling',
++  title: 'Emanuel Blueboard Corporation | Plastering & Blueboard Contractor — Framingham & MetroWest MA',
++  description: 'Licensed plastering and blueboard contractor serving Framingham, Natick, Ashland, and MetroWest MA since 2001. Skim coat plastering, vaulted ceilings, water damage repair, and new construction. Free estimates — call (508) 250-8872.',
++  keywords: 'blueboard installation, plastering contractor, MetroWest MA, Framingham MA, Natick MA, skim coat plastering, vaulted ceiling plastering, water damage repair, drywall contractor, blueboard contractor near me',
++  metadataBase: new URL(SITE_URL),
++  alternates: {
++    canonical: '/',
++  },
++  openGraph: {
++    title: 'Emanuel Blueboard Corporation — Plastering & Blueboard Contractor',
++    description: 'Expert blueboard installation and plastering across MetroWest MA since 2001. Licensed & insured. Free estimates — (508) 250-8872.',
++    url: SITE_URL,
++    siteName: 'Emanuel Blueboard Corporation',
++    images: [
++      {
++        url: '/images/vaulted-ceiling-plastering-new-build.jpg',
++        width: 1200,
++        height: 630,
++        alt: 'Vaulted ceiling plastering by Emanuel Blueboard Corporation — MetroWest MA',
++      },
++    ],
++    locale: 'en_US',
++    type: 'website',
++  },
++  twitter: {
++    card: 'summary_large_image',
++    title: 'Emanuel Blueboard Corporation — Plastering & Blueboard Contractor',
++    description: 'Expert blueboard installation and plastering across MetroWest MA since 2001. Free estimates — (508) 250-8872.',
++    images: ['/images/vaulted-ceiling-plastering-new-build.jpg'],
++  },
++  robots: {
++    index: true,
++    follow: true,
++    googleBot: {
++      index: true,
++      follow: true,
++      'max-video-preview': -1,
++      'max-image-preview': 'large',
++      'max-snippet': -1,
++    },
++  },
++}
++
++// JSON-LD Structured Data — LocalBusiness + Service Schema
++const jsonLd = {
++  '@context': 'https://schema.org',
++  '@type': 'HomeAndConstructionBusiness',
++  '@id': `${SITE_URL}/#business`,
++  name: 'Emanuel Blueboard & Plastering Corp.',
++  alternateName: 'Emanuel Blueboard Corporation',
++  url: SITE_URL,
++  logo: `${SITE_URL}/images/emanuel-blueboard-logo.png`,
++  image: `${SITE_URL}/images/vaulted-ceiling-plastering-new-build.jpg`,
++  description: 'Licensed plastering and blueboard contractor serving Framingham, Natick, Ashland, and MetroWest MA since 2001. Specializing in skim coat plastering, vaulted ceilings, water damage repair, and new construction.',
++  telephone: '+1-508-250-8872',
++  priceRange: '$$',
++  address: {
++    '@type': 'PostalAddress',
++    streetAddress: '49 Cedar St',
++    addressLocality: 'Framingham',
++    addressRegion: 'MA',
++    postalCode: '01760',
++    addressCountry: 'US',
++  },
++  geo: {
++    '@type': 'GeoCoordinates',
++    latitude: 42.2793,
++    longitude: -71.4162,
++  },
++  openingHoursSpecification: [
++    {
++      '@type': 'OpeningHoursSpecification',
++      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
++      opens: '07:00',
++      closes: '18:00',
++    },
++  ],
++  areaServed: [
++    { '@type': 'City', name: 'Framingham' },
++    { '@type': 'City', name: 'Natick' },
++    { '@type': 'City', name: 'Ashland' },
++    { '@type': 'City', name: 'Holliston' },
++    { '@type': 'City', name: 'Milford' },
++    { '@type': 'City', name: 'Hopkinton' },
++    { '@type': 'City', name: 'Marlborough' },
++    { '@type': 'City', name: 'Sudbury' },
++    { '@type': 'City', name: 'Wayland' },
++    { '@type': 'City', name: 'Westborough' },
++    { '@type': 'City', name: 'Southborough' },
++  ],
++  hasOfferCatalog: {
++    '@type': 'OfferCatalog',
++    name: 'Plastering & Blueboard Services',
++    itemListElement: [
++      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Blueboard Installation', description: 'Professional installation of blueboard drywall panels for new construction, additions, and full room buildouts.' } },
++      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Skim Coat Plastering', description: 'Smooth, hard plaster finish applied over blueboard — the most durable wall surface available.' } },
++      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Vaulted & Complex Ceilings', description: 'Specialty work on angled, cathedral, coffered, and architectural ceilings.' } },
++      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Water Damage Repair', description: 'Full restoration after leaks, flooding, or moisture damage — matching existing finishes seamlessly.' } },
++      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Full Room Renovation', description: 'Complete wall and ceiling work for gut renovations, working alongside general contractors and homeowners.' } },
++      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Patch & Repair', description: 'Holes, cracks, crumbling plaster, failed tape — patched and blended seamlessly.' } },
++    ],
++  },
++  aggregateRating: {
++    '@type': 'AggregateRating',
++    ratingValue: '5.0',
++    reviewCount: '3',
++    bestRating: '5',
++  },
++  review: [
++    {
++      '@type': 'Review',
++      author: { '@type': 'Person', name: 'Michael R.' },
++      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
++      reviewBody: 'Emanuel and his crew did our entire new build — every room, every ceiling. The finish is immaculate.',
++      datePublished: '2024-01-15',
++    },
++    {
++      '@type': 'Review',
++      author: { '@type': 'Person', name: 'Sarah L.' },
++      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
++      reviewBody: 'We had a complicated vaulted ceiling situation that two other contractors declined. The result was stunning.',
++      datePublished: '2024-03-22',
++    },
++    {
++      '@type': 'Review',
++      author: { '@type': 'Person', name: 'James P.' },
++      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
++      reviewBody: 'Water damage repair blended so perfectly we could not tell where the old plaster ended and new work began.',
++      datePublished: '2024-06-10',
++    },
++  ],
++  foundingDate: '2001',
++  slogan: 'Making Dreams Come True Since 2001',
++  knowsAbout: ['blueboard installation', 'skim coat plastering', 'veneer plastering', 'drywall', 'vaulted ceiling construction', 'water damage restoration'],
+ }
+ 
+ export default function RootLayout({
+@@ -14,6 +147,12 @@ export default function RootLayout({
+ }) {
+   return (
+     <html lang="en">
++      <head>
++        <script
++          type="application/ld+json"
++          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
++        />
++      </head>
+       <body>{children}</body>
+     </html>
+   )
+diff --git a/app/robots.ts b/app/robots.ts
+new file mode 100644
+index 0000000..f1803c1
+--- /dev/null
++++ b/app/robots.ts
+@@ -0,0 +1,14 @@
++import type { MetadataRoute } from 'next'
++
++// TODO: Replace with actual custom domain once purchased
++const SITE_URL = 'https://emanuel-blueboard.vercel.app'
++
++export default function robots(): MetadataRoute.Robots {
++  return {
++    rules: {
++      userAgent: '*',
++      allow: '/',
++    },
++    sitemap: `${SITE_URL}/sitemap.xml`,
++  }
++}
+diff --git a/app/sitemap.ts b/app/sitemap.ts
+new file mode 100644
+index 0000000..c620dff
+--- /dev/null
++++ b/app/sitemap.ts
+@@ -0,0 +1,21 @@
++import type { MetadataRoute } from 'next'
++
++// TODO: Replace with actual custom domain once purchased
++const SITE_URL = 'https://emanuel-blueboard.vercel.app'
++
++export default function sitemap(): MetadataRoute.Sitemap {
++  return [
++    {
++      url: SITE_URL,
++      lastModified: new Date(),
++      changeFrequency: 'weekly',
++      priority: 1,
++    },
++    {
++      url: `${SITE_URL}/gallery`,
++      lastModified: new Date(),
++      changeFrequency: 'weekly',
++      priority: 0.8,
++    },
++  ]
++}
+diff --git a/components/About.tsx b/components/About.tsx
+index 74cd8a5..ada9a3e 100644
+--- a/components/About.tsx
++++ b/components/About.tsx
+@@ -15,8 +15,8 @@ export default function About() {
+       {/* IMAGE with dark overlay */}
+       <div className="about-image-stack fade-up">
+         <Image
+-          src="/images/GCUD7035.JPG"
+-          alt="Emanuel — owner and master plasterer"
++          src="/images/emanuel-owner-master-plasterer.jpg"
++          alt="Emanuel — owner and master plasterer at Emanuel Blueboard Corporation, Framingham MA"
+           width={500}
+           height={600}
+           style={{
+diff --git a/components/Contact.tsx b/components/Contact.tsx
+index 726c713..9b0e9bf 100644
+--- a/components/Contact.tsx
++++ b/components/Contact.tsx
+@@ -35,7 +35,7 @@ export default function Contact() {
+       {/* CTA BANNER */}
+       <div className="cta-banner fade-up">
+         <h2 className="cta-title">
+-          PROFESSIONAL PLASTRING<br />&amp; <span style={{ color: 'var(--gold)' }}>DRYWALL SERVICES</span>
++          PROFESSIONAL PLASTERING<br />&amp; <span style={{ color: 'var(--gold)' }}>DRYWALL SERVICES</span>
+         </h2>
+         <p className="cta-tagline">Smooth Finishes that Last.</p>
+         <p className="cta-subtitle">Free estimates · Fast turnaround · 25+ years of expertise</p>
+diff --git a/components/Gallery.tsx b/components/Gallery.tsx
+index 43ddb95..c9fee4d 100644
+--- a/components/Gallery.tsx
++++ b/components/Gallery.tsx
+@@ -3,18 +3,18 @@ import { useState } from 'react'
+ import Image from 'next/image'
+ 
+ const images = [
+-  { src: '/images/EPRS8484.JPG', alt: 'Angled vaulted ceiling — plastered finish', caption: 'Vaulted Ceiling · New Build', category: 'Ceilings' },
+-  { src: '/images/FSPS9920.JPG', alt: 'Diamond ceiling plaster detail', caption: 'Architectural Ceiling Detail', category: 'Ceilings' },
+-  { src: '/images/ISVC9343.JPG', alt: 'Blueboard installation worker', caption: 'Blueboard Install · Residential', category: 'Blueboard' },
+-  { src: '/images/QMWO3515.JPG', alt: 'Large room blueboard ready for plaster', caption: 'Full Room Blueboard · New Construction', category: 'Blueboard' },
+-  { src: '/images/XJNO5519.JPG', alt: 'Team working on new construction', caption: 'New Construction · Team Install', category: 'Blueboard' },
+-  { src: '/images/THJP2626.JPG', alt: 'Ceiling drop installation', caption: 'Drop Ceiling · Renovation', category: 'Ceilings' },
+-  { src: '/images/WDQP0406.JPG', alt: 'Wall repair and patching', caption: 'Wall Repair · Patch Work', category: 'Repair' },
+-  { src: '/images/HZNC7100.JPG', alt: 'Angled ceiling close-up', caption: 'Angled Ceiling · Smooth Finish', category: 'Ceilings' },
+-  { src: '/images/QKOP5402.JPG', alt: 'Close-up blueboard detail', caption: 'Blueboard Close-up · Detail Work', category: 'Blueboard' },
+-  { src: '/images/HPWQ5817.JPG', alt: 'New construction exterior', caption: 'New Build · MetroWest MA', category: 'Blueboard' },
+-  { src: '/images/VHNO6568.JPG', alt: 'Stairwell blueboard', caption: 'Stairwell · Curved Wall', category: 'Blueboard' },
+-  { src: '/images/CSHV7891.JPG', alt: 'Crane delivery large job site', caption: 'Large Scale · Commercial Job', category: 'Blueboard' },
++  { src: '/images/vaulted-ceiling-plastering-new-build.jpg', alt: 'Vaulted ceiling plastering in new construction home — Framingham MA', caption: 'Vaulted Ceiling · New Build', category: 'Ceilings' },
++  { src: '/images/architectural-diamond-ceiling-plaster.jpg', alt: 'Architectural diamond ceiling plaster detail by Emanuel Blueboard', caption: 'Architectural Ceiling Detail', category: 'Ceilings' },
++  { src: '/images/blueboard-installation-residential.jpg', alt: 'Professional blueboard installation in residential home — MetroWest MA', caption: 'Blueboard Install · Residential', category: 'Blueboard' },
++  { src: '/images/full-room-blueboard-new-construction.jpg', alt: 'Full room blueboard ready for skim coat plaster — new construction', caption: 'Full Room Blueboard · New Construction', category: 'Blueboard' },
++  { src: '/images/new-construction-team-install.jpg', alt: 'Emanuel Blueboard crew installing blueboard in new construction', caption: 'New Construction · Team Install', category: 'Blueboard' },
++  { src: '/images/drop-ceiling-renovation-metrowest.jpg', alt: 'Drop ceiling renovation and plastering — MetroWest Massachusetts', caption: 'Drop Ceiling · Renovation', category: 'Ceilings' },
++  { src: '/images/wall-repair-patching-framingham.jpg', alt: 'Plaster wall repair and patching in Framingham MA home', caption: 'Wall Repair · Patch Work', category: 'Repair' },
++  { src: '/images/angled-ceiling-smooth-plaster-finish.jpg', alt: 'Smooth plaster finish on angled ceiling — close-up detail', caption: 'Angled Ceiling · Smooth Finish', category: 'Ceilings' },
++  { src: '/images/blueboard-close-up-detail.jpg', alt: 'Blueboard drywall panel close-up showing seam detail', caption: 'Blueboard Close-up · Detail Work', category: 'Blueboard' },
++  { src: '/images/new-build-exterior-metrowest-ma.jpg', alt: 'New home construction exterior — MetroWest MA project', caption: 'New Build · MetroWest MA', category: 'Blueboard' },
++  { src: '/images/curved-stairwell-blueboard-installation.jpg', alt: 'Curved stairwell blueboard installation — specialty plastering work', caption: 'Stairwell · Curved Wall', category: 'Blueboard' },
++  { src: '/images/commercial-job-site-large-scale.jpg', alt: 'Large scale commercial blueboard job site with crane delivery', caption: 'Large Scale · Commercial Job', category: 'Blueboard' },
+ ]
+ 
+ const filters = ['All', 'Ceilings', 'Blueboard', 'Repair']
+diff --git a/components/Hero.tsx b/components/Hero.tsx
+index 939837b..508b29e 100644
+--- a/components/Hero.tsx
++++ b/components/Hero.tsx
+@@ -41,8 +41,8 @@ export default function Hero() {
+         {/* RIGHT */}
+         <div className="hero-right" style={{ position: 'relative', overflow: 'hidden' }}>
+           <Image
+-            src="/images/EPRS8484.JPG"
+-            alt="Expert plastering — clean angled ceiling work"
++            src="/images/vaulted-ceiling-plastering-new-build.jpg"
++            alt="Vaulted ceiling plastering by Emanuel Blueboard — MetroWest MA contractor"
+             fill
+             className="hero-img-main"
+             priority
+diff --git a/components/Nav.tsx b/components/Nav.tsx
+index da71d7b..0c3049d 100644
+--- a/components/Nav.tsx
++++ b/components/Nav.tsx
+@@ -25,7 +25,7 @@ export default function Nav() {
+       <nav className={`site-nav ${scrolled ? 'scrolled' : ''}`}>
+         <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+           <Image
+-            src="/images/Emanuel_Logo.png"
++            src="/images/emanuel-blueboard-logo.png"
+             alt="Emanuel Blueboard Corporation"
+             width={100}
+             height={100}
+diff --git a/components/Projects.tsx b/components/Projects.tsx
+index e081907..4090f43 100644
+--- a/components/Projects.tsx
++++ b/components/Projects.tsx
+@@ -1,11 +1,11 @@
+ import Image from 'next/image'
+ 
+ const projects = [
+-  { src: '/images/EPRS8484.JPG', type: 'New Construction · Framingham MA', name: 'Vaulted Master Suite' },
+-  { src: '/images/FSPS9920.JPG', type: 'Specialty Ceiling · MetroWest', name: 'Architectural Diamond Ceiling' },
+-  { src: '/images/QMWO3515.JPG', type: 'New Build · Full Room', name: 'Living Room Blueboard & Plaster' },
+-  { src: '/images/THJP2626.JPG', type: 'Renovation · Drop Ceiling', name: 'Open Plan Ceiling Renovation' },
+-  { src: '/images/VHNO6568.JPG', type: 'Specialty · Curved Walls', name: 'Curved Stairwell Installation' },
++  { src: '/images/vaulted-ceiling-plastering-new-build.jpg', type: 'New Construction · Framingham MA', name: 'Vaulted Master Suite' },
++  { src: '/images/architectural-diamond-ceiling-plaster.jpg', type: 'Specialty Ceiling · MetroWest', name: 'Architectural Diamond Ceiling' },
++  { src: '/images/full-room-blueboard-new-construction.jpg', type: 'New Build · Full Room', name: 'Living Room Blueboard & Plaster' },
++  { src: '/images/drop-ceiling-renovation-metrowest.jpg', type: 'Renovation · Drop Ceiling', name: 'Open Plan Ceiling Renovation' },
++  { src: '/images/curved-stairwell-blueboard-installation.jpg', type: 'Specialty · Curved Walls', name: 'Curved Stairwell Installation' },
+ ]
+ 
+ export default function Projects() {
