@@ -244,7 +244,7 @@ body::before {
 /* ── CTA BANNER ── */
 .cta-banner { padding: 7rem 4rem; background: linear-gradient(135deg, #1a0a00 0%, var(--charcoal) 50%, #001a1a 100%); position: relative; overflow: hidden; text-align: center; }
 .cta-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.1) 0%, transparent 50%), radial-gradient(ellipse at 80% 50%, rgba(26,188,156,0.08) 0%, transparent 50%); }
-.cta-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 6vw, 5.5rem); line-height: 1; letter-spacing: 0.03em; margin-bottom: 1rem; position: relative; }
+.cta-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 6vw, 5.5rem); line-height: 1; letter-spacing: 0.03em; margin-bottom: 1rem; position: relative; text-transform: uppercase;}
 .cta-tagline { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-style: italic; color: var(--gold); margin-bottom: 0.8rem; position: relative; }
 .cta-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: var(--plaster); opacity: 0.8; margin-bottom: 3rem; position: relative; }
 

@@ -35,7 +35,7 @@ export default function Contact() {
       {/* CTA BANNER */}
       <div className="cta-banner fade-up">
         <h2 className="cta-title">
-          Professional Plastering<br />&amp; <span style={{ color: 'var(--gold)' }}>Drywall Services</span>
+          PROFESSIONAL PLASTRING<br />&amp; <span style={{ color: 'var(--gold)' }}>DRYWALL SERVICES</span>
         </h2>
         <p className="cta-tagline">Smooth Finishes that Last.</p>
         <p className="cta-subtitle">Free estimates · Fast turnaround · 25+ years of expertise</p>
@@ -57,7 +57,7 @@ export default function Contact() {
 
           {[
             { icon: '📞', label: 'Phone', value: '(508) 250-8872', sub: 'Call or text anytime', href: 'tel:5082508872' },
-            { icon: '📍', label: 'Address', value: '49 Cedar St, Framingham, MA 01760', sub: 'Serving all of MetroWest MA' },
+            { icon: '📍', label: 'Address', value: '49 Cedar St, Framingham, MA 01760', sub: 'Serving all of MetroWest MA', href: 'https://maps.google.com/?q=49+Cedar+St+Framingham+MA+01760' },
             { icon: '🕐', label: 'Hours', value: 'Mon – Sat: 7am – 6pm', sub: 'Emergency repairs available' },
           ].map(({ icon, label, value, sub, href }) => (
             <div key={label} className="contact-row">
