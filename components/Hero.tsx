@@ -6,12 +6,12 @@ export default function Hero() {
       <section className="hero">
         {/* LEFT */}
         <div className="hero-left">
-          <div className="hero-eyebrow">49 Cedar St, Framingham, MA · Since 2001</div>
+          <div className="hero-eyebrow">Making Dreams Come True · Since 2001</div>
 
           <h1 className="hero-title">
-            <span className="accent">Emanuel</span><br />
-            <span className="outline">Blueboard</span><br />
-            &amp; Plastering
+            <span className="accent">EMANUEL</span><br />
+            <span className="outline">BLUEBOARD</span><br />
+            &amp; PLASTERING
           </h1>
 
           <p className="hero-subtitle">

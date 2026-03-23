@@ -35,8 +35,9 @@ export default function Contact() {
       {/* CTA BANNER */}
       <div className="cta-banner fade-up">
         <h2 className="cta-title">
-          Ready to <span style={{ color: 'var(--gold)' }}>Start</span><br />Your Project?
+          Professional Plastering<br />&amp; <span style={{ color: 'var(--gold)' }}>Drywall Services</span>
         </h2>
+        <p className="cta-tagline">Smooth Finishes that Last.</p>
         <p className="cta-subtitle">Free estimates · Fast turnaround · 25+ years of expertise</p>
         {/* Use cta-actions class — stacks on mobile, row on desktop */}
         <div className="cta-actions">
