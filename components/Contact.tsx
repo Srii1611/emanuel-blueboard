@@ -37,7 +37,7 @@ export default function Contact() {
         <h2 className="cta-title">
           Ready to <span style={{ color: 'var(--gold)' }}>Start</span><br />Your Project?
         </h2>
-        <p className="cta-subtitle">Free estimates · Fast turnaround · 15+ years of expertise</p>
+        <p className="cta-subtitle">Free estimates · Fast turnaround · 25+ years of expertise</p>
         {/* Use cta-actions class — stacks on mobile, row on desktop */}
         <div className="cta-actions">
           <a href="#contact" className="btn-primary btn-large"><span>Get a Free Quote</span></a>
@@ -56,7 +56,7 @@ export default function Contact() {
 
           {[
             { icon: '📞', label: 'Phone', value: '(508) 250-8872', sub: 'Call or text anytime', href: 'tel:5082508872' },
-            { icon: '📍', label: 'Based In', value: 'Framingham, Massachusetts', sub: 'Serving all of MetroWest MA' },
+            { icon: '📍', label: 'Address', value: '49 Cedar St, Framingham, MA 01760', sub: 'Serving all of MetroWest MA' },
             { icon: '🕐', label: 'Hours', value: 'Mon – Sat: 7am – 6pm', sub: 'Emergency repairs available' },
           ].map(({ icon, label, value, sub, href }) => (
             <div key={label} className="contact-row">

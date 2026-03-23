@@ -2,8 +2,8 @@ import Image from 'next/image'
 
 const credentials = [
   'Fully Licensed & Insured in MA',
-  '15+ Years Experience',
-  '500+ Projects Completed',
+  '25+ Years Experience',
+  '1,000+ Projects Completed',
   'New Construction Specialists',
   'Renovation Experts',
   'On-Time Guaranteed',
@@ -26,7 +26,6 @@ export default function About() {
             display: 'block',
           }}
         />
-        {/* Dark gradient so text is never placed over the image on mobile */}
         <div className="about-img-overlay" />
       </div>
 
@@ -42,7 +41,7 @@ export default function About() {
         </blockquote>
 
         <p className="about-text">
-          Emanuel Blueboard Corporation has been delivering precision plastering and blueboard work across MetroWest Massachusetts for over 15 years. What started as a one-man operation built on quality and word-of-mouth has grown into a trusted name among contractors, builders, and homeowners throughout the region.
+          Emanuel Blueboard &amp; Plastering Corp has been delivering precision plastering and blueboard work across MetroWest Massachusetts since 2001. What started as a one-man operation built on quality and word-of-mouth has grown into a trusted name among contractors, builders, and homeowners throughout the region.
         </p>
         <p className="about-text">
           We specialize in work that other crews turn down — vaulted ceilings, complex angles, tight timelines, and renovation projects that demand seamless matching. No shortcuts. No excuses. Just clean, durable work that stands up for decades.

@@ -22,14 +22,11 @@ export default function Testimonials() {
 
       <div className="testimonials-grid">
         {reviews.map((r, i) => (
-          <div key={r.name} className={`testimonial fade-up`}>
+          <div key={r.name} className="testimonial fade-up">
             <div className="stars">★★★★★</div>
             <p className="testimonial-text">{r.text}</p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
-              <div
-                className="author-avatar"
-                style={{ background: avatarColors[i] }}
-              >
+              <div className="author-avatar" style={{ background: avatarColors[i] }}>
                 {r.initials}
               </div>
               <div>

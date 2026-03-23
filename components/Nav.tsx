@@ -15,7 +15,7 @@ export default function Nav() {
 
   const links = [
     { label: 'Services', href: '#services' },
-    { label: 'Gallery', href: '#gallery' },
+    { label: 'Gallery', href: '/gallery' },
     { label: 'About', href: '#about' },
     { label: 'Process', href: '#process' },
   ]

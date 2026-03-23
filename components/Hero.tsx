@@ -6,12 +6,12 @@ export default function Hero() {
       <section className="hero">
         {/* LEFT */}
         <div className="hero-left">
-          <div className="hero-eyebrow">MetroWest Massachusetts · Since 2009</div>
+          <div className="hero-eyebrow">49 Cedar St, Framingham, MA · Since 2001</div>
 
           <h1 className="hero-title">
-            <span className="accent">Master</span><br />
-            <span className="outline">Plaster</span><br />
-            &amp; Board
+            <span className="accent">Emanuel</span><br />
+            <span className="outline">Blueboard</span><br />
+            &amp; Plastering
           </h1>
 
           <p className="hero-subtitle">
@@ -20,8 +20,8 @@ export default function Hero() {
 
           <div className="hero-stats">
             {[
-              { number: '15+', label: 'Years Active' },
-              { number: '500+', label: 'Projects Done' },
+              { number: '25+', label: 'Years Active' },
+              { number: '1K+', label: 'Projects Done' },
               { number: '100%', label: 'Licensed & Insured' },
             ].map(({ number, label }) => (
               <div key={label} className="hero-stat">
@@ -68,10 +68,10 @@ export default function Hero() {
           {[
             'Blueboard Installation', 'Skim Coat Plastering', 'Vaulted Ceilings',
             'Water Damage Repair', 'New Construction', 'Renovation Work',
-            'Framingham MA', 'MetroWest MA',
+            'Framingham MA', 'Since 2001',
             'Blueboard Installation', 'Skim Coat Plastering', 'Vaulted Ceilings',
             'Water Damage Repair', 'New Construction', 'Renovation Work',
-            'Framingham MA', 'MetroWest MA',
+            'Framingham MA', 'Since 2001',
           ].map((item, i) => (
             <span key={i} className="marquee-item">
               {item} <span className="marquee-dot" />
