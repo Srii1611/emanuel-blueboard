@@ -1,11 +1,11 @@
 import Image from 'next/image'
 
 const projects = [
-  { src: '/images/EPRS8484.JPG', type: 'New Construction · Framingham MA', name: 'Vaulted Master Suite' },
-  { src: '/images/FSPS9920.JPG', type: 'Specialty Ceiling · MetroWest', name: 'Architectural Diamond Ceiling' },
-  { src: '/images/QMWO3515.JPG', type: 'New Build · Full Room', name: 'Living Room Blueboard & Plaster' },
-  { src: '/images/THJP2626.JPG', type: 'Renovation · Drop Ceiling', name: 'Open Plan Ceiling Renovation' },
-  { src: '/images/VHNO6568.JPG', type: 'Specialty · Curved Walls', name: 'Curved Stairwell Installation' },
+  { src: '/images/vaulted-ceiling-plastering-new-build.jpg', type: 'New Construction · Framingham MA', name: 'Vaulted Master Suite' },
+  { src: '/images/architectural-diamond-ceiling-plaster.jpg', type: 'Specialty Ceiling · MetroWest', name: 'Architectural Diamond Ceiling' },
+  { src: '/images/full-room-blueboard-new-construction.jpg', type: 'New Build · Full Room', name: 'Living Room Blueboard & Plaster' },
+  { src: '/images/drop-ceiling-renovation-metrowest.jpg', type: 'Renovation · Drop Ceiling', name: 'Open Plan Ceiling Renovation' },
+  { src: '/images/curved-stairwell-blueboard-installation.jpg', type: 'Specialty · Curved Walls', name: 'Curved Stairwell Installation' },
 ]
 
 export default function Projects() {

@@ -15,8 +15,8 @@ export default function About() {
       {/* IMAGE with dark overlay */}
       <div className="about-image-stack fade-up">
         <Image
-          src="/images/GCUD7035.JPG"
-          alt="Emanuel — owner and master plasterer"
+          src="/images/emanuel-owner-master-plasterer.jpg"
+          alt="Emanuel — owner and master plasterer at Emanuel Blueboard Corporation, Framingham MA"
           width={500}
           height={600}
           style={{

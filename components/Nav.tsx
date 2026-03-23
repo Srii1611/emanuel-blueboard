@@ -25,7 +25,7 @@ export default function Nav() {
       <nav className={`site-nav ${scrolled ? 'scrolled' : ''}`}>
         <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
           <Image
-            src="/images/Emanuel_Logo.png"
+            src="/images/emanuel-blueboard-logo.png"
             alt="Emanuel Blueboard Corporation"
             width={100}
             height={100}

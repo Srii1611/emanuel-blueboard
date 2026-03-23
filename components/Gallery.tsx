@@ -3,18 +3,18 @@ import { useState } from 'react'
 import Image from 'next/image'
 
 const images = [
-  { src: '/images/EPRS8484.JPG', alt: 'Angled vaulted ceiling — plastered finish', caption: 'Vaulted Ceiling · New Build', category: 'Ceilings' },
-  { src: '/images/FSPS9920.JPG', alt: 'Diamond ceiling plaster detail', caption: 'Architectural Ceiling Detail', category: 'Ceilings' },
-  { src: '/images/ISVC9343.JPG', alt: 'Blueboard installation worker', caption: 'Blueboard Install · Residential', category: 'Blueboard' },
-  { src: '/images/QMWO3515.JPG', alt: 'Large room blueboard ready for plaster', caption: 'Full Room Blueboard · New Construction', category: 'Blueboard' },
-  { src: '/images/XJNO5519.JPG', alt: 'Team working on new construction', caption: 'New Construction · Team Install', category: 'Blueboard' },
-  { src: '/images/THJP2626.JPG', alt: 'Ceiling drop installation', caption: 'Drop Ceiling · Renovation', category: 'Ceilings' },
-  { src: '/images/WDQP0406.JPG', alt: 'Wall repair and patching', caption: 'Wall Repair · Patch Work', category: 'Repair' },
-  { src: '/images/HZNC7100.JPG', alt: 'Angled ceiling close-up', caption: 'Angled Ceiling · Smooth Finish', category: 'Ceilings' },
-  { src: '/images/QKOP5402.JPG', alt: 'Close-up blueboard detail', caption: 'Blueboard Close-up · Detail Work', category: 'Blueboard' },
-  { src: '/images/HPWQ5817.JPG', alt: 'New construction exterior', caption: 'New Build · MetroWest MA', category: 'Blueboard' },
-  { src: '/images/VHNO6568.JPG', alt: 'Stairwell blueboard', caption: 'Stairwell · Curved Wall', category: 'Blueboard' },
-  { src: '/images/CSHV7891.JPG', alt: 'Crane delivery large job site', caption: 'Large Scale · Commercial Job', category: 'Blueboard' },
+  { src: '/images/vaulted-ceiling-plastering-new-build.jpg', alt: 'Vaulted ceiling plastering in new construction home — Framingham MA', caption: 'Vaulted Ceiling · New Build', category: 'Ceilings' },
+  { src: '/images/architectural-diamond-ceiling-plaster.jpg', alt: 'Architectural diamond ceiling plaster detail by Emanuel Blueboard', caption: 'Architectural Ceiling Detail', category: 'Ceilings' },
+  { src: '/images/blueboard-installation-residential.jpg', alt: 'Professional blueboard installation in residential home — MetroWest MA', caption: 'Blueboard Install · Residential', category: 'Blueboard' },
+  { src: '/images/full-room-blueboard-new-construction.jpg', alt: 'Full room blueboard ready for skim coat plaster — new construction', caption: 'Full Room Blueboard · New Construction', category: 'Blueboard' },
+  { src: '/images/new-construction-team-install.jpg', alt: 'Emanuel Blueboard crew installing blueboard in new construction', caption: 'New Construction · Team Install', category: 'Blueboard' },
+  { src: '/images/drop-ceiling-renovation-metrowest.jpg', alt: 'Drop ceiling renovation and plastering — MetroWest Massachusetts', caption: 'Drop Ceiling · Renovation', category: 'Ceilings' },
+  { src: '/images/wall-repair-patching-framingham.jpg', alt: 'Plaster wall repair and patching in Framingham MA home', caption: 'Wall Repair · Patch Work', category: 'Repair' },
+  { src: '/images/angled-ceiling-smooth-plaster-finish.jpg', alt: 'Smooth plaster finish on angled ceiling — close-up detail', caption: 'Angled Ceiling · Smooth Finish', category: 'Ceilings' },
+  { src: '/images/blueboard-close-up-detail.jpg', alt: 'Blueboard drywall panel close-up showing seam detail', caption: 'Blueboard Close-up · Detail Work', category: 'Blueboard' },
+  { src: '/images/new-build-exterior-metrowest-ma.jpg', alt: 'New home construction exterior — MetroWest MA project', caption: 'New Build · MetroWest MA', category: 'Blueboard' },
+  { src: '/images/curved-stairwell-blueboard-installation.jpg', alt: 'Curved stairwell blueboard installation — specialty plastering work', caption: 'Stairwell · Curved Wall', category: 'Blueboard' },
+  { src: '/images/commercial-job-site-large-scale.jpg', alt: 'Large scale commercial blueboard job site with crane delivery', caption: 'Large Scale · Commercial Job', category: 'Blueboard' },
 ]
 
 const filters = ['All', 'Ceilings', 'Blueboard', 'Repair']

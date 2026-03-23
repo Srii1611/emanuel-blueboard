@@ -35,7 +35,7 @@ export default function Contact() {
       {/* CTA BANNER */}
       <div className="cta-banner fade-up">
         <h2 className="cta-title">
-          PROFESSIONAL PLASTRING<br />&amp; <span style={{ color: 'var(--gold)' }}>DRYWALL SERVICES</span>
+          PROFESSIONAL PLASTERING<br />&amp; <span style={{ color: 'var(--gold)' }}>DRYWALL SERVICES</span>
         </h2>
         <p className="cta-tagline">Smooth Finishes that Last.</p>
         <p className="cta-subtitle">Free estimates · Fast turnaround · 25+ years of expertise</p>

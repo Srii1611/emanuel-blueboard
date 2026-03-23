@@ -41,8 +41,8 @@ export default function Hero() {
         {/* RIGHT */}
         <div className="hero-right" style={{ position: 'relative', overflow: 'hidden' }}>
           <Image
-            src="/images/EPRS8484.JPG"
-            alt="Expert plastering — clean angled ceiling work"
+            src="/images/vaulted-ceiling-plastering-new-build.jpg"
+            alt="Vaulted ceiling plastering by Emanuel Blueboard — MetroWest MA contractor"
             fill
             className="hero-img-main"
             priority
