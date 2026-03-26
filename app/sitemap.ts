@@ -1,7 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-// TODO: Replace with actual custom domain once purchased
-const SITE_URL = 'https://emanuel-blueboard.vercel.app'
+const SITE_URL = 'https://www.emanuelblueboardcorp.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
