@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
-// TODO: Replace with actual custom domain once purchased
-const SITE_URL = 'https://emanuel-blueboard.vercel.app'
+const SITE_URL = 'https://www.emanuelblueboardcorp.com'
 
 export const metadata: Metadata = {
   title: 'Emanuel Blueboard Corporation | Plastering & Blueboard Contractor — Framingham & MetroWest MA',
@@ -47,7 +46,6 @@ export const metadata: Metadata = {
   },
 }
 
-// JSON-LD Structured Data — LocalBusiness + Service Schema
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'HomeAndConstructionBusiness',
@@ -148,6 +146,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="google-site-verification" content="u3T2pat5D1oMfTyyLm4cpZHNSjZ-KN5gwfk8KtvsPl8" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

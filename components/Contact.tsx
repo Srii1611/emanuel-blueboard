@@ -14,7 +14,7 @@ export default function Contact() {
     const data = new FormData(form)
 
     try {
-      const res = await fetch('https://formspree.io/f/mojkgjar', {
+      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
         method: 'POST',
         body: data,
         headers: { Accept: 'application/json' },
@@ -61,7 +61,8 @@ export default function Contact() {
             { icon: '🕐', label: 'Hours', value: 'Mon – Sat: 7am – 6pm', sub: 'Emergency repairs available' },
           ].map(({ icon, label, value, sub, href }) => (
             <div key={label} className="contact-row">
-              <div className="contact-icon">{icon}</div>
+              <div className="contact-icon">{icon}</div>https://formspree.io/f/mojkgjar
+
               <div>
                 <div className="contact-label">{label}</div>
                 <div className="contact-value">
@@ -82,66 +83,68 @@ export default function Contact() {
 
         {/* FORM */}
         <div className="fade-up">
-          {status === 'success' ? (
-            <div className="form-success-message">
-              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✅</div>
-              <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '2rem', color: 'var(--gold)', marginBottom: '0.8rem' }}>
-                Message Received!
-              </h3>
-              <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--plaster)', marginBottom: '0.5rem' }}>
-                Thanks for reaching out. We&apos;ll call you back within <strong style={{ color: 'var(--cream)' }}>2 business hours</strong>.
-              </p>
-              <p style={{ fontSize: '0.85rem', color: 'var(--plaster)', opacity: 0.7 }}>
-                Need us sooner? Call <a href="tel:5082508872" style={{ color: 'var(--gold)', textDecoration: 'none' }}>(508) 250-8872</a> directly.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit}>
-              <div style={{ marginBottom: '1rem' }}>
-                <label className="form-label">Name</label>
-                <input type="text" name="name" className="form-input" placeholder="John Smith" required />
+          <form onSubmit={handleSubmit}>
+            {/* Name row — stacks on mobile */}
+            <div className="form-row">
+              <div>
+                <label className="form-label">First Name</label>
+                <input type="text" name="first_name" className="form-input" placeholder="John" required />
               </div>
-              <div style={{ marginBottom: '1rem' }}>
+              <div>
+                <label className="form-label">Last Name</label>
+                <input type="text" name="last_name" className="form-input" placeholder="Smith" required />
+              </div>
+            </div>
+            {/* Phone/email row — stacks on mobile */}
+            <div className="form-row">
+              <div>
                 <label className="form-label">Phone</label>
                 <input type="tel" name="phone" className="form-input" placeholder="(508) 555-0000" required />
               </div>
-              <div style={{ marginBottom: '1rem' }}>
-                <label className="form-label">Service Needed</label>
-                <select name="service" className="form-select">
-                  <option value="">Select a service (optional)</option>
-                  <option>Blueboard Installation</option>
-                  <option>Skim Coat Plastering</option>
-                  <option>Vaulted / Complex Ceiling</option>
-                  <option>Water Damage Repair</option>
-                  <option>Full Room Renovation</option>
-                  <option>Patch &amp; Repair</option>
-                  <option>Other / Not Sure</option>
-                </select>
+              <div>
+                <label className="form-label">Email</label>
+                <input type="email" name="email" className="form-input" placeholder="john@email.com" />
               </div>
-              <div style={{ marginBottom: '1.5rem' }}>
-                <label className="form-label">Brief Project Description</label>
-                <textarea name="message" className="form-textarea" placeholder="Tell us briefly what you need — we'll get the details on the call." />
-              </div>
+            </div>
+            <div style={{ marginBottom: '1rem' }}>
+              <label className="form-label">Service Needed</label>
+              <select name="service" className="form-select">
+                <option value="">Select a service...</option>
+                <option>Blueboard Installation</option>
+                <option>Skim Coat Plastering</option>
+                <option>Vaulted / Complex Ceiling</option>
+                <option>Water Damage Repair</option>
+                <option>Full Room Renovation</option>
+                <option>Patch &amp; Repair</option>
+                <option>Other / Not Sure</option>
+              </select>
+            </div>
+            <div style={{ marginBottom: '1rem' }}>
+              <label className="form-label">Town / City</label>
+              <input type="text" name="town" className="form-input" placeholder="Framingham, Natick, Ashland..." />
+            </div>
+            <div style={{ marginBottom: '1.5rem' }}>
+              <label className="form-label">Project Details</label>
+              <textarea name="message" className="form-textarea" placeholder="Tell us about your project — size, timeline, any special requirements..." />
+            </div>
 
-              <button
-                type="submit"
-                className="btn-primary"
-                style={{ width: '100%', padding: '1.1rem', fontSize: '0.9rem', letterSpacing: '0.12em' }}
-                disabled={status === 'sending'}
-              >
-                <span>
-                  {status === 'sending' ? 'Sending...' : 'Get My Free Estimate'}
-                </span>
-              </button>
+            <button
+              type="submit"
+              className="btn-primary"
+              style={{ width: '100%', padding: '1.1rem', fontSize: '0.9rem', letterSpacing: '0.12em' }}
+              disabled={status === 'sending'}
+            >
+              <span>
+                {status === 'sending' ? 'Sending...' : status === 'success' ? '✅ Message Sent!' : 'Send Message & Request Quote'}
+              </span>
+            </button>
 
-              {status === 'error' && (
-                <p style={{ color: 'var(--rust)', fontSize: '0.85rem', marginTop: '0.8rem', textAlign: 'center' }}>
-                  Could not send — please try again or call us directly at{' '}
-                  <a href="tel:5082508872" style={{ color: 'var(--gold)', textDecoration: 'none' }}>(508) 250-8872</a>.
-                </p>
-              )}
-            </form>
-          )}
+            {status === 'error' && (
+              <p style={{ color: 'var(--rust)', fontSize: '0.85rem', marginTop: '0.8rem', textAlign: 'center' }}>
+                Something went wrong. Please call us directly at (508) 250-8872.
+              </p>
+            )}
+          </form>
         </div>
       </section>
     </>
