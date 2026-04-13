@@ -53,7 +53,7 @@ const jsonLd = {
   name: 'Emanuel Blueboard & Plastering Corp.',
   alternateName: 'Emanuel Blueboard Corporation',
   url: SITE_URL,
-  logo: `${SITE_URL}/images/emanuel-blueboard-logo.png`,
+  logo: `${SITE_URL}/images/logo.png`,
   image: `${SITE_URL}/images/vaulted-ceiling-plastering-new-build.jpg`,
   description: 'Licensed plastering and blueboard contractor serving Framingham, Natick, Ashland, and MetroWest MA since 2001. Specializing in skim coat plastering, vaulted ceilings, water damage repair, and new construction.',
   telephone: '+1-508-250-8872',

@@ -2,6 +2,9 @@
 import { useState } from 'react'
 import Image from 'next/image'
 
+// Tiny 1×1 grey pixel used as blur placeholder while images load
+const BLUR_PLACEHOLDER = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN0d3evBwAC/QF9Q9BqHAAAAABJRU5ErkJggg=='
+
 const images = [
   /* ── Ceilings ── */
   { src: '/images/hero-banner.jpg', alt: 'Vaulted ceiling with flawless plaster finish — new construction by Emanuel Blueboard', caption: 'Vaulted Ceiling · Finished Plaster', category: 'Ceilings' },
@@ -68,6 +71,9 @@ export default function Gallery() {
               height={800}
               style={{ width: '100%', height: 'auto', display: 'block' }}
               loading="lazy"
+              placeholder="blur"
+              blurDataURL={BLUR_PLACEHOLDER}
+              sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw"
             />
             <div className="gallery-overlay">
               <span className="gallery-caption">{img.caption}</span>
