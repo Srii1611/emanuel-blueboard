@@ -206,11 +206,20 @@ body::before {
 
 /* ── PROJECTS ── */
 .projects { padding: 8rem 0; background: var(--ink); overflow: hidden; }
-.projects-scroll { display: flex; gap: 1.5rem; padding: 0 4rem; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
-.projects-scroll::-webkit-scrollbar { display: none; }
-.project-card { flex-shrink: 0; width: 380px; position: relative; overflow: hidden; }
-.project-img { width: 100%; height: 480px; object-fit: cover; display: block; transition: transform 0.5s ease; filter: saturate(0.8); }
-.project-card:hover .project-img { transform: scale(1.05); filter: saturate(1); }
+.projects-scroll {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  height: 380px;
+}
+.project-card img { transition: transform 0.5s ease; filter: saturate(0.8); }
+.project-card:hover img { transform: scale(1.05); filter: saturate(1); }
 .project-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(to top, rgba(13,13,13,0.95) 0%, transparent 100%); }
 .project-type { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
 .project-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.05em; color: var(--cream); }
@@ -476,8 +485,7 @@ body::before {
   /* Projects */
   .projects { padding: 5rem 0; }
   .projects-scroll { padding: 0 1.5rem; gap: 1rem; }
-  .project-card { width: 280px; }
-  .project-img { height: 360px; }
+  .project-card { height: 320px; }
 
   /* Process */
   .process { padding: 5rem 1.5rem; }
@@ -508,6 +516,22 @@ body::before {
   .footer-top { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem 2rem; text-align: center; }
   .footer-col { align-items: center; }
   .footer-bottom { flex-direction: column; gap: 0.5rem; padding: 1.2rem 1.5rem; text-align: center; }
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE — SMALL TABLET (max 768px)
+══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .project-card { height: 280px; }
+  .projects-scroll { grid-template-columns: 1fr; }
+
+  .hero-section {
+    min-height: 100svh;
+    background-attachment: scroll;
+  }
+  .hero-title {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
 }
 
 /* ══════════════════════════════════════
@@ -545,9 +569,8 @@ body::before {
 
   /* Projects */
   .projects { padding: 4rem 0; }
-  .projects-scroll { padding: 0 1.2rem; gap: 0.8rem; }
-  .project-card { width: calc(85vw); }
-  .project-img { height: 300px; }
+  .projects-scroll { padding: 0 1.2rem; gap: 0.8rem; grid-template-columns: 1fr; }
+  .project-card { height: 280px; }
   .project-name { font-size: 1.2rem; }
 
   /* Process */

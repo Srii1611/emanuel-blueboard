@@ -3,21 +3,33 @@ import { useState } from 'react'
 import Image from 'next/image'
 
 const images = [
-  { src: '/images/vaulted-ceiling-plastering-new-build.jpg', alt: 'Vaulted ceiling plastering in new construction home — Framingham MA', caption: 'Vaulted Ceiling · New Build', category: 'Ceilings' },
-  { src: '/images/architectural-diamond-ceiling-plaster.jpg', alt: 'Architectural diamond ceiling plaster detail by Emanuel Blueboard', caption: 'Architectural Ceiling Detail', category: 'Ceilings' },
-  { src: '/images/blueboard-installation-residential.jpg', alt: 'Professional blueboard installation in residential home — MetroWest MA', caption: 'Blueboard Install · Residential', category: 'Blueboard' },
-  { src: '/images/full-room-blueboard-new-construction.jpg', alt: 'Full room blueboard ready for skim coat plaster — new construction', caption: 'Full Room Blueboard · New Construction', category: 'Blueboard' },
-  { src: '/images/new-construction-team-install.jpg', alt: 'Emanuel Blueboard crew installing blueboard in new construction', caption: 'New Construction · Team Install', category: 'Blueboard' },
-  { src: '/images/drop-ceiling-renovation-metrowest.jpg', alt: 'Drop ceiling renovation and plastering — MetroWest Massachusetts', caption: 'Drop Ceiling · Renovation', category: 'Ceilings' },
-  { src: '/images/wall-repair-patching-framingham.jpg', alt: 'Plaster wall repair and patching in Framingham MA home', caption: 'Wall Repair · Patch Work', category: 'Repair' },
-  { src: '/images/angled-ceiling-smooth-plaster-finish.jpg', alt: 'Smooth plaster finish on angled ceiling — close-up detail', caption: 'Angled Ceiling · Smooth Finish', category: 'Ceilings' },
-  { src: '/images/blueboard-close-up-detail.jpg', alt: 'Blueboard drywall panel close-up showing seam detail', caption: 'Blueboard Close-up · Detail Work', category: 'Blueboard' },
-  { src: '/images/new-build-exterior-metrowest-ma.jpg', alt: 'New home construction exterior — MetroWest MA project', caption: 'New Build · MetroWest MA', category: 'Blueboard' },
-  { src: '/images/curved-stairwell-blueboard-installation.jpg', alt: 'Curved stairwell blueboard installation — specialty plastering work', caption: 'Stairwell · Curved Wall', category: 'Blueboard' },
-  { src: '/images/commercial-job-site-large-scale.jpg', alt: 'Large scale commercial blueboard job site with crane delivery', caption: 'Large Scale · Commercial Job', category: 'Blueboard' },
+  /* ── Ceilings ── */
+  { src: '/images/hero-banner.jpg', alt: 'Vaulted ceiling with flawless plaster finish — new construction by Emanuel Blueboard', caption: 'Vaulted Ceiling · Finished Plaster', category: 'Ceilings' },
+  { src: '/images/ceiling-diamond-plaster.jpg', alt: 'Diamond pyramid ceiling plaster detail — specialty work by Emanuel Blueboard', caption: 'Diamond Ceiling · Specialty', category: 'Ceilings' },
+  { src: '/images/crew-ceiling-finish-stilts.jpg', alt: 'Plasterer on stilts finishing vaulted ceiling — MetroWest MA', caption: 'Vaulted Ceiling · Skim Coat', category: 'Ceilings' },
+  { src: '/images/crew-vaulted-ceiling-plaster.jpg', alt: 'Worker plastering vaulted ceiling on stilts — new construction', caption: 'Vaulted Ceiling · In Progress', category: 'Ceilings' },
+  { src: '/images/crew-skim-coat-ceiling.jpg', alt: 'Crew member applying skim coat plaster to ceiling', caption: 'Ceiling Skim Coat · Close-up', category: 'Ceilings' },
+  { src: '/images/ceiling-framing-prep.jpg', alt: 'Ceiling framing and furring strips ready for blueboard installation', caption: 'Ceiling Prep · Framing', category: 'Ceilings' },
+  /* ── Blueboard ── */
+  { src: '/images/blueboard-vaulted-room.jpg', alt: 'Vaulted room with blueboard installed ready for plaster — new construction', caption: 'Blueboard Install · Vaulted Room', category: 'Blueboard' },
+  { src: '/images/blueboard-full-room.png', alt: 'Full room blueboard installation with plaster bags ready — MetroWest MA', caption: 'Full Room · Blueboard Install', category: 'Blueboard' },
+  { src: '/images/blueboard-stairwell-install.png', alt: 'Stairwell blueboard installation — new construction project', caption: 'Stairwell · Blueboard', category: 'Blueboard' },
+  { src: '/images/blueboard-angled-closet.png', alt: 'Angled closet space with precision blueboard install', caption: 'Angled Space · Blueboard', category: 'Blueboard' },
+  { src: '/images/crew-blueboard-install-team.jpg', alt: 'Two-man crew installing blueboard panel on scaffold', caption: 'Team Install · Blueboard', category: 'Blueboard' },
+  { src: '/images/crew-blueboard-lift.jpg', alt: 'Crew lifting blueboard sheet into position — teamwork', caption: 'Blueboard Lift · Teamwork', category: 'Blueboard' },
+  { src: '/images/crew-blueboard-framing.jpg', alt: 'Worker installing blueboard onto wall framing', caption: 'Wall Framing · Blueboard', category: 'Blueboard' },
+  /* ── Crew ── */
+  { src: '/images/team-full-crew-exterior.jpg', alt: 'Full Emanuel Blueboard crew outside completed new build — MetroWest MA', caption: 'Full Crew · New Build', category: 'Crew' },
+  { src: '/images/team-crew-vaulted-room.jpg', alt: 'Five-man plastering crew in finished vaulted room', caption: 'Crew Photo · Vaulted Room', category: 'Crew' },
+  { src: '/images/crew-two-plasterers.jpg', alt: 'Two plasterers working together in vaulted ceiling space', caption: 'Team Plastering · Vaulted Space', category: 'Crew' },
+  { src: '/images/crew-plastering-stilts.jpg', alt: 'Plasterer on stilts applying skim coat to wall', caption: 'Stilts Work · Skim Coat', category: 'Crew' },
+  { src: '/images/crew-wall-skim-coat.jpg', alt: 'Worker applying smooth skim coat plaster to wall corner', caption: 'Wall Finish · Skim Coat', category: 'Crew' },
+  { src: '/images/crew-stilts-angled-ceiling.jpg', alt: 'Worker on stilts plastering angled ceiling with bucket and tools', caption: 'Angled Ceiling · Stilts', category: 'Crew' },
+  { src: '/images/crew-wall-detail-closeup.jpg', alt: 'Plasterer applying finish coat — close-up detail with safety goggles', caption: 'Detail Work · Close-up', category: 'Crew' },
+  { src: '/images/crew-plastering-room.jpg', alt: 'Worker plastering in freshly finished room with tools', caption: 'Room Finish · Plastering', category: 'Crew' },
 ]
 
-const filters = ['All', 'Ceilings', 'Blueboard', 'Repair']
+const filters = ['All', 'Ceilings', 'Blueboard', 'Crew']
 
 export default function Gallery() {
   const [active, setActive] = useState('All')

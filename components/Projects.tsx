@@ -1,11 +1,12 @@
 import Image from 'next/image'
 
 const projects = [
-  { src: '/images/vaulted-ceiling-plastering-new-build.jpg', type: 'New Construction · Framingham MA', name: 'Vaulted Master Suite' },
-  { src: '/images/architectural-diamond-ceiling-plaster.jpg', type: 'Specialty Ceiling · MetroWest', name: 'Architectural Diamond Ceiling' },
-  { src: '/images/full-room-blueboard-new-construction.jpg', type: 'New Build · Full Room', name: 'Living Room Blueboard & Plaster' },
-  { src: '/images/drop-ceiling-renovation-metrowest.jpg', type: 'Renovation · Drop Ceiling', name: 'Open Plan Ceiling Renovation' },
-  { src: '/images/curved-stairwell-blueboard-installation.jpg', type: 'Specialty · Curved Walls', name: 'Curved Stairwell Installation' },
+  { src: '/images/hero-banner.jpg', type: 'New Construction · Framingham MA', name: 'Vaulted Master Suite' },
+  { src: '/images/ceiling-diamond-plaster.jpg', type: 'Specialty Ceiling · MetroWest', name: 'Diamond Ceiling Detail' },
+  { src: '/images/blueboard-stairwell-install.png', type: 'Specialty · New Construction', name: 'Stairwell Blueboard Install' },
+  { src: '/images/blueboard-full-room.png', type: 'New Construction · MetroWest', name: 'Full Room Blueboard' },
+  { src: '/images/crew-vaulted-ceiling-plaster.jpg', type: 'Finish Work · MetroWest MA', name: 'Vaulted Ceiling Plastering' },
+  { src: '/images/blueboard-vaulted-room.jpg', type: 'New Construction · MetroWest', name: 'Vaulted Room Blueboard' },
 ]
 
 export default function Projects() {
@@ -20,15 +21,8 @@ export default function Projects() {
 
       <div className="projects-scroll">
         {projects.map((p) => (
-          <div key={p.name} className="project-card">
-            <Image
-              src={p.src}
-              alt={p.name}
-              width={380}
-              height={480}
-              className="project-img"
-              style={{ objectFit: 'cover' }}
-            />
+          <div key={p.name} className="project-card" style={{position:'relative', overflow:'hidden', height:'480px', borderRadius:'8px'}}>
+            <Image src={p.src} alt={p.name} fill style={{objectFit:'cover'}} />
             <div className="project-info">
               <div className="project-type">{p.type}</div>
               <div className="project-name">{p.name}</div>

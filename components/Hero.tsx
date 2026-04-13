@@ -4,9 +4,26 @@ import Link from 'next/link'
 export default function Hero() {
   return (
     <>
-      <section className="hero">
+      <section
+        className="hero hero-section"
+        style={{
+          backgroundImage: "url('/images/hero-banner.jpg')",
+          position: 'relative',
+          minHeight: '100vh',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        {/* Dark overlay for text readability */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(to right, rgba(13,13,13,0.92) 0%, rgba(13,13,13,0.7) 50%, rgba(13,13,13,0.4) 100%)',
+          zIndex: 1,
+        }} />
+
         {/* LEFT */}
-        <div className="hero-left">
+        <div className="hero-left" style={{ zIndex: 2 }}>
           <div className="hero-eyebrow">Making Dreams Come True · Since 2001</div>
 
           <h1 className="hero-title">
@@ -38,16 +55,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* RIGHT */}
-        <div className="hero-right" style={{ position: 'relative', overflow: 'hidden' }}>
-          <Image
-            src="/images/vaulted-ceiling-plastering-new-build.jpg"
-            alt="Vaulted ceiling plastering by Emanuel Blueboard — MetroWest MA contractor"
-            fill
-            className="hero-img-main"
-            priority
-            style={{ objectFit: 'cover' }}
-          />
+        {/* RIGHT — keep for layout spacing, badge overlay */}
+        <div className="hero-right" style={{ position: 'relative', overflow: 'hidden', zIndex: 2 }}>
           <div className="hero-badge">
             <div style={{ textAlign: 'center', color: 'var(--ink)' }}>
               <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '2rem', lineHeight: 1 }}>A+</div>
@@ -57,7 +66,7 @@ export default function Hero() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="hero-scroll-indicator">
+        <div className="hero-scroll-indicator" style={{ zIndex: 2 }}>
           <div className="scroll-line" />
           Scroll to explore
         </div>
